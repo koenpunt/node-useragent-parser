@@ -1,13 +1,10 @@
 { 
   "name": "useragent-parser",
   "description": "A NodeJS User Agent Parser.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "http://github.com/koenpunt/node-useragent-parser.git"
-  },
-  "dependencies": {
-    "js-yaml": "~0.3"
   },
   "devDependencies":{
     "mocha": "~1.3",
