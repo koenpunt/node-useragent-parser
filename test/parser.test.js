@@ -21,7 +21,7 @@ function runUserAgentTestsFromYAML(file_name){
       , result = {};
       
     if( ('js_ua' in test_case) ){
-      kwds = eval(test_case['js_ua']);
+      kwds = test_case['js_ua'];
     }
     
     // The expected results
@@ -49,7 +49,7 @@ function runOSTestsFromYAML(file_name){
       , result = {};
       
     if( ('js_ua' in test_case) ){
-      kwds = eval(test_case['js_ua']);
+      kwds = test_case['js_ua'];
     }
     
     // The expected results
@@ -87,7 +87,7 @@ function runDeviceTestsFromYAML(file_name){
       , result = {};
       
     if( ('js_ua' in test_case) ){
-      kwds = eval(test_case['js_ua']);
+      kwds = test_case['js_ua'];
     }
     
     // The expected results
