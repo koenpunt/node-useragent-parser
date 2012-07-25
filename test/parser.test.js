@@ -21,7 +21,7 @@ function runUserAgentTestsFromYAML(file_name){
       , result = {};
       
     if( ('js_ua' in test_case) ){
-      kwds = test_case['js_ua'];
+      kwds = eval('(' + test_case['js_ua'] + ')');
     }
     
     // The expected results
@@ -30,9 +30,8 @@ function runUserAgentTestsFromYAML(file_name){
                 'minor': test_case['minor'],
                 'patch': test_case['patch']}
     
-    
     result = user_agent_parser.parse_user_agent(user_agent_string, kwds);
-    result.should.eql( expected, util.format("UA: %s\n expected<%s, %s, %s, %s> != actual<%s, %s, %s, %s>",
+    result.should.eql( expected, util.format("\n UA: %s\n expected<%s, %s, %s, %s> != actual<%s, %s, %s, %s>",
                         user_agent_string,
                         expected['family'], expected['major'], expected['minor'], expected['patch'],
                         result['family'], result['major'], result['minor'], result['patch']));
@@ -49,7 +48,7 @@ function runOSTestsFromYAML(file_name){
       , result = {};
       
     if( ('js_ua' in test_case) ){
-      kwds = test_case['js_ua'];
+      kwds = eval('(' + test_case['js_ua'] + ')');
     }
     
     // The expected results
@@ -62,7 +61,7 @@ function runOSTestsFromYAML(file_name){
     }
 
     result = user_agent_parser.parse_os(user_agent_string, kwds);
-    result.should.eql( expected, util.format("UA: %s\n expected<%s %s %s %s %s> != actual<%s %s %s %s %s>",
+    result.should.eql( expected, util.format("\n UA: %s\n expected<%s %s %s %s %s> != actual<%s %s %s %s %s>",
                         user_agent_string,
                         expected['family'],
                         expected['major'],
@@ -87,7 +86,7 @@ function runDeviceTestsFromYAML(file_name){
       , result = {};
       
     if( ('js_ua' in test_case) ){
-      kwds = test_case['js_ua'];
+      kwds = eval('(' + test_case['js_ua'] + ')');
     }
     
     // The expected results
@@ -98,7 +97,7 @@ function runDeviceTestsFromYAML(file_name){
     };
 
     result = user_agent_parser.parse_device(user_agent_string, kwds);
-    result.should.eql(expected, util.format("UA: %s\n expected<%s %s %s> != actual<%s %s %s>",
+    result.should.eql(expected, util.format("\n UA: %s\n expected<%s %s %s> != actual<%s %s %s>",
             user_agent_string,
             expected['family'],
             expected['is_mobile'],
