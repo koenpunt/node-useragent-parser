@@ -4,7 +4,7 @@
   "version": "0.1.1",
   "repository": {
     "type": "git",
-    "url": "http://github.com/koenpunt/node-useragent-parser.git"
+    "url": "https://github.com/koenpunt/node-useragent-parser.git"
   },
   "devDependencies":{
     "mocha": "~1.3",
